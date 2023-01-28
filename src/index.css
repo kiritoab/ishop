@@ -46,7 +46,7 @@ select {
 .copyrights {
   display: flex;
   justify-content: center;
-  background-color: blueviolet;
+  background-color: rgb(253, 253, 253);
   padding: 50px 80px 50px 80px;
   margin-bottom: 0px;
 }
