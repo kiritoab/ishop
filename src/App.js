@@ -9,12 +9,12 @@ import Products from "./components/Products";
 import 'bootstrap/dist/css/bootstrap.css';
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import "https://kit.fontawesome.com/eabc1575b6.js";
 
 function App() {
   return (
     <div>
       <Navbar  />
-
       <Routes>
         <Route path="/" element={<Products />}></Route>
         <Route path="products" element={<Products />}></Route>
