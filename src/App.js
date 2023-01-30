@@ -15,9 +15,9 @@ import Checkout from "./components/common/Checkout";
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
 
-      <Navbar  />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Products />}></Route>
         <Route path="products" element={<Products />}></Route>
