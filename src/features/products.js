@@ -19,9 +19,9 @@ export const getProducts = () => (dispatch) => {
 const initialState = {
   products: [],
   cart: [],
+  searchQuery: "",
 };
 
-// just tryna solve omar's github problems ! Nothing serious guys relax
 export const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -30,14 +30,20 @@ export const productsSlice = createSlice({
       // console.log("action", action);
       state.products = action.payload;
     },
+    setSearchQuery: (state, action) => {
+      // console.log(action.payload);
+      state.searchQuery = action.payload;
+    },
     addToCart: (state, action) => {
-      // console.log("action", action);
+      // if (!state.cart.includes(action.payload)){
       state.cart = [...state.cart, action.payload];
     },
+
     delProductFromCart: (state, action) => {
-      // console.log("action", action);
+      console.log("PAYLOADD", action);
       state.cart = state.cart.filter((p) => p.id !== action.payload);
     },
+
     delAllFromCart: (state) => {
       // console.log("action");
       state.cart = [];

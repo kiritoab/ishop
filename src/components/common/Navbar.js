@@ -1,9 +1,13 @@
-import React from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
 const Navbar = () => {
+  // for counter use
   const productsInCart = useSelector((state) => state.products.cart);
+
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -30,6 +34,7 @@ const Navbar = () => {
       </ul>
       <form className="search">
         <input className="form-control" type="search" placeholder="Search"></input>
+        <Search setSearchQuery={setSearchQuery} searchQuery={searchQuery} />
       </form>
     </div></div>
   </nav>

@@ -1,8 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ProductCard from "../ProductCard";
 
-
-const Filter = ({products, searchQuery, category}) => {
+const Filter = ({ products, category }) => {
+  const searchQuery = useSelector((state) => state.products.searchQuery);
   return (
     <div className="card-row">
       {searchQuery === ""

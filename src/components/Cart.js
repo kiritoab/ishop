@@ -3,41 +3,20 @@ import { HiShoppingCart } from "react-icons/hi";
 import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../features/products";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  // const [products, setProducts] = useState([]);
   // let [totalPrice, setTotalPrice] = useState(0);
   const productsInCart = useSelector((state) => state.products.cart);
-
-  const [loading, setLoading] = useState(false);
+  const [productCount, setProductCount] = useState(0);
   const dispatch = useDispatch();
-  // const url = "https://fakestoreapi.com/products/";
 
-  
   useEffect(() => {
     dispatch(getProducts());
-    // setTimeout(() => {
-    //   fetch(url)
-    //     .then((response) => {
-    //       if (!response.ok) {
-    //         throw Error("Can not connect to the server!.");
-    //       }
-    //       return response.json();
-    //     })
-    //     .then((data) => {
-    //       // console.log(data);
-    //       setProducts(data);
-    //       setLoading(true);
-    //     })
-    //     .catch((e) => {
-    //       console.log(e.message);
-    //       setLoading(true);
-    //     });
-    // }, 2000);
   }, []);
 
   const handleDelete = (id) => {
-    console.log("THIS IS ID", id)
+    console.log("THIS IS ID", id);
     // setProducts(updatedProducts);
     dispatch({ type: "products/delProductFromCart", payload: id });
   };
@@ -45,10 +24,17 @@ const Cart = () => {
   const handleDeleteAll = () => {
     dispatch({ type: "products/delAllFromCart" });
   };
-  console.log(productsInCart);
 
-  console.log(loading);
-  return !loading ? (
+  // const renderCount = (product) => {
+  //   if (productsInCart?.includes(product)) {
+  //     setProductCount(productCount + 1);
+  //   }
+  //   return productCount;
+  // };
+  //console.log(productsInCart);
+
+  // console.log(loading);
+  return (
     <div className="cart-container">
       <div className="cart-top-container">
         {/* <p className="cart-title">Cart</p> */}
@@ -88,11 +74,12 @@ const Cart = () => {
                   ></img>
                 </td>
                 <td>${product.price}</td>
-                <td>{product.rating.count}</td>
+                <td>{productCount}</td>
                 <td>
                   <AiFillDelete
                     className="cart-delete"
                     style={{ cursor: "pointer" }}
+                    // onClick={() => handleDelete(product.id)}
                     onClick={() => handleDelete(product.id)}
                   ></AiFillDelete>
                 </td>
@@ -101,9 +88,13 @@ const Cart = () => {
           })}
         </tbody>
       </table>
+
+      {/*Payment checkout */}
+      <br />
+      <Link to="checkout" className="btn btn-dark">
+        Buy Now
+      </Link>
     </div>
-  ) : (
-    <p className="three-dots">...</p>
   );
 };
 

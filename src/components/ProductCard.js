@@ -3,7 +3,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 import { FiTag } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getProducts } from "../features/products";
+// import { getProducts } from "../features/products";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
