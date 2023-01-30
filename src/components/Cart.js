@@ -37,7 +37,7 @@ const Cart = () => {
   }, []);
 
   const handleDelete = (id) => {
-    
+    console.log("THIS IS ID", id)
     // setProducts(updatedProducts);
     dispatch({ type: "products/delProductFromCart", payload: id });
   };

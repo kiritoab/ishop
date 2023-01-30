@@ -21,6 +21,7 @@ const initialState = {
   cart: [],
 };
 
+// just tryna solve omar's github problems ! Nothing serious guys relax
 export const productsSlice = createSlice({
   name: "products",
   initialState,
@@ -35,7 +36,7 @@ export const productsSlice = createSlice({
     },
     delProductFromCart: (state, action) => {
       // console.log("action", action);
-      state.cart = state.cart.filter((p) => p.key !== action.payload);
+      state.cart = state.cart.filter((p) => p.id !== action.payload);
     },
     delAllFromCart: (state) => {
       // console.log("action");
