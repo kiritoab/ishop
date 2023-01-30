@@ -86,10 +86,12 @@ nav{
     transition: 0.3s ease-in-out;
     backdrop-filter: blur(5px);
     border-bottom-left-radius: 10px;
+    
   } 
   #navbar.active{
     right: 0px;
     position: absolute;
+    z-index: 2;
   }
   #navbar li{
     margin-bottom: 25px;
