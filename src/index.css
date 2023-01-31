@@ -10,48 +10,51 @@ body {
   min-height: 100vh;
   font-size: 1.5rem;
 }
-.navbar{
-  height: 90px;
-  background-color: rgb(139, 135, 135);
+.nav{
+  background-color: rgb(166, 166, 170);
 }
-.logo{
+#logo{
+  display: grid;
   align-items: center;
   justify-content: center;
-  margin-left: 30px;
-  font-weight: 800;
-  font-size: 40px;
-  text-decoration: none;
-  color: white;
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(1, 0, 0);
   transition: 0.3s ease-in-out;
+  margin: 0 20px 0 20px;
 }
-.logo:hover{
-  color: aqua;
-}
-#navbarTog{
-  margin-left: 10px;
-}
-.navitem{
-  font-size: 25px;
-  margin-left: 50px;
+#logo:hover{
+  color:black ;
 }
 .navlinks{
-  align-items: center;
-  justify-content: center;
+  margin: 0 30px 0 30px;
+  font-size: 25px;
+  font-weight: 500;
+  display:grid;
   text-decoration: none;
-  font-weight: 600;
-  color: #fff;
-  transition: 0.3s ease-in-out;
+  color: rgb(126, 25, 25);
+  justify-content:flex-start;
+  align-items:center;
 }
 .navlinks:hover{
-  color: aqua;
+  color: rgb(0, 0, 0);
 }
-.search{
-  display: flex;
-  margin-left: auto;
-  justify-content: center;
-  align-items: center;
+#navbarScrollingDropdown{
+  color: rgb(126, 25, 25);
 }
-
+Form.search{
+  width: 100%;
+  padding: 0 0 0 10px;
+}
+.sbox{
+  width: 100%;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 17px;
+  font-weight: 500;
+  padding-left: 10px;
+  outline-color: rgb(153, 34, 34);
+}
 
 /* FOOTER */
 #footer{

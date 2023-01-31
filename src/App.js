@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/common/Navbar";
+import Navbars from "./components/common/Navbars";
 import ProductsDetails from "./components/ProductDetails";
 import NotFound from "./components/common/NotFound";
 import Cart from "./components/Cart";
@@ -11,11 +11,12 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import "https://kit.fontawesome.com/eabc1575b6.js";
 import Checkout from "./components/common/Checkout";
+import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
 
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbars/>
       <Routes>
         <Route path="/" element={<Products />}></Route>
         <Route path="products" element={<Products />}></Route>

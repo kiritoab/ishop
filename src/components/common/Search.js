@@ -6,16 +6,9 @@ const Search = () => {
 
   return (
     <div>
-      <input
-        // style={{ paddingBottom: "20" }}
-        placeholder="Search..."
-        onChange={(event) =>
-          dispatch({
-            type: "products/setSearchQuery",
-            payload: event.target.value,
-          })
-        }
-      />
+      <input className="sbox"
+        placeholder="What Are You Looking For?"
+        onChange={(event) =>dispatch({type: "products/setSearchQuery",payload: event.target.value,})}/>
     </div>
   );
 };
